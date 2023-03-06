@@ -22,8 +22,10 @@ const renderJoke = (library) => {
     divJoke.className = "joke"
     
     divJoke.append(pJoke)
-    document.body.appendChild(divJoke);
-    console.log(joke);
+    // document.body.appendChild(divJoke);
+    const jokes = document.querySelector('#jokes')
+    jokes.innerText = joke
+    console.log(jokes);
 }
 
 document.addEventListener('DOMContentLoaded', findBook)
