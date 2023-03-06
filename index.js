@@ -1,16 +1,29 @@
 const findBook = () => {
-    const inputField = document.getElementById('input_form');
-    console.log(inputField);
-    inputField.addEventListener('submit', handleSubmit)
+    const randomJoke = document.getElementById('randomizer');
+    // console.log(inputField);
+    randomJoke.addEventListener('click', handleSubmit)
 }
 
 const handleSubmit = (event) => {
     event.preventDefault();
-    const inputField = document.getElementById('input_form');
+    
     fetch(`https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single`)
     .then(response => response.json())
-    .then(library => console.log(library))
+    .then(library => renderJoke(library))
     .catch(error => console.error(error));
     }
 
-    document.addEventListener('DOMContentLoaded', findBook)
+
+const renderJoke = (library) => {
+    const joke = library.joke;
+    const pJoke = document.createElement("p");
+    pJoke.innerHTML = joke;
+    const divJoke = document.createElement("div")
+    divJoke.className = "joke"
+    
+    divJoke.append(pJoke)
+    document.body.appendChild(divJoke);
+    console.log(joke);
+}
+
+document.addEventListener('DOMContentLoaded', findBook)

@@ -1,0 +1,10 @@
+{
+    "jokes": [
+      {
+        "id": 1,
+        "joke": "",
+        "category": "",
+        "likes": 0
+      }
+    ]
+}
