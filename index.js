@@ -2,6 +2,9 @@ const findBook = () => {
     const randomJoke = document.getElementById('randomizer');
     // console.log(inputField);
     randomJoke.addEventListener('click', handleSubmit)
+    const likeBtn = document.getElementById('like')
+        likeBtn.addEventListener('click', handleLikeClick)
+
 }
 
 const handleSubmit = (event) => {
@@ -27,5 +30,6 @@ const renderJoke = (library) => {
     jokes.innerText = joke
     console.log(jokes);
 }
+ 
 
 document.addEventListener('DOMContentLoaded', findBook)
