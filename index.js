@@ -29,19 +29,14 @@ const renderJoke = (library) => {
     jokes.innerText = joke
     //console.log(jokes);
 
-
-
-    
-    
     const obj = {
         jokes: joke,
         category: library.category,
         likes: '0'
-        
     }
     
     const likeBtn = document.getElementById('like')
-    likeBtn.addEventListener('click', handleLikeClick(obj))
+    likeBtn.addEventListener('click', () => handleLikeClick(obj))
 }
 
 
