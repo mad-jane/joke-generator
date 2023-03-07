@@ -30,9 +30,6 @@ const renderJoke = (library) => {
     //console.log(jokes);
 
 
-
-    
-    
     const obj = {
         jokes: joke,
         category: library.category,
@@ -52,4 +49,3 @@ function handleLikeClick(likeButton) {
 }
 document.addEventListener('DOMContentLoaded', findBook)
 
-.
