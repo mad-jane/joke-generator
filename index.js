@@ -2,8 +2,6 @@ const findBook = () => {
     const randomJoke = document.getElementById('randomizer');
     // console.log(inputField);
     randomJoke.addEventListener('click', handleSubmit)
-    
-    
 }
 
 const handleSubmit = (event) => {
