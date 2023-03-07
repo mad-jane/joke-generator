@@ -1,9 +1,15 @@
 {
   "jokes": [
     {
-      "jokes": "// This line doesn't actually do anything, but the code stops working when I delete it.",
-      "category": "Programming",
-      "likes": 7,
+      "jokes": "Gabrielle ",
+      "category": "fun",
+      "likes": 3,
+      "id": 1
+    },
+    {
+      "jokes": "fosj",
+      "category": "fun",
+      "likes": 3,
       "id": 2
     }
   ]

@@ -107,7 +107,34 @@ const renderData = (element) => {
 
     // append whole div with all elements to global div
     divJokes.append(divJokesContent)
+
 }
+
+const submitForm = document.getElementById('input_form')
+
+submitForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const newSubmitObj = {
+       jokes: e.target.name.value,
+       category: e.target.category.value,
+       likes: '0'
+       
+    }
+    console.log(newSubmitObj)
+
+     fetch('http://localhost:3000/jokes/', {
+    method: "POST",
+    headers: {
+     'Content-type':'application/json',
+         },
+    body:JSON.stringify(newSubmitObj)
+     })
+    .then(res => res.json())
+    .then(data => renderData(data))
+
+})
+
+
 
 
 
