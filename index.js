@@ -41,6 +41,7 @@ const renderJoke = (library) => {
 function handleLikeClick(likeButton) {
     console.log(likeButton)
     //fetch('http://localhost:3000')
+    console.log('test')
     
 }
 document.addEventListener('DOMContentLoaded', findBook)
