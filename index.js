@@ -1,12 +1,4 @@
-const findBook = () => {
-    const randomJoke = document.getElementById('randomizer');
-    // console.log(inputField);
-    randomJoke.addEventListener('click', handleSubmit)
-}
-
-const handleSubmit = (event) => {
-    event.preventDefault();
-    
+const handleSubmit = () => {
     fetch(`https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single`)
     .then(response => response.json())
     .then(library => renderJoke(library))
@@ -15,38 +7,47 @@ const handleSubmit = (event) => {
 
 
 const renderJoke = (library) => {
-    const joke = library.joke;
-    const pJoke = document.createElement("p");
-    pJoke.innerHTML = joke;
-    const divJoke = document.createElement("div")
-    divJoke.className = "joke"
+  
+    // const divJoke = document.querySelector("#existing-jokes")
     
-    divJoke.append(pJoke)
-    // document.body.appendChild(divJoke);
-    const jokes = document.querySelector('#jokes')
-    jokes.innerText = joke
-    //console.log(jokes);
+    const spanJokes = document.querySelector('#jokes')
+    spanJokes.innerText = library.joke
 
-<<<<<<< HEAD
+    const likeBtn = document.createElement('button')
+        likeBtn.className = "like"
+        likeBtn.innerText = "Favorite"
 
-=======
->>>>>>> a56cc30cd83df609f769c9eacfc66b14e0202708
+    const disBtn = document.createElement('button')
+        disBtn.className = "dislike"
+        disBtn.innerText = "Bad Joke"  
+
+    spanJokes.append(likeBtn, disBtn)
+
     const obj = {
-        jokes: joke,
+        jokes: library.joke,
         category: library.category,
         likes: '0'
     }
     
-    const likeBtn = document.getElementById('like')
     likeBtn.addEventListener('click', () => handleLikeClick(obj))
+    disBtn.addEventListener('click', () => handleSubmit())
 }
 
 
-function handleLikeClick(likeButton) {
-    console.log(likeButton)
-    //fetch('http://localhost:3000')
-    console.log('test')
-    
+function handleLikeClick(addFav) {
+    handleSubmit()
+    fetch("http://localhost:3000/jokes", {
+        method: "POST",
+        headers: {
+            'Content-type':'application/json',
+            },
+        body:JSON.stringify(addFav)
+        })
+    .then(res => res.json())
+    .then(data => console.log(data))    
 }
-document.addEventListener('DOMContentLoaded', findBook)
+
+
+
+document.addEventListener('DOMContentLoaded', handleSubmit())
 
