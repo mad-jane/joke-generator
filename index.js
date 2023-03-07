@@ -2,8 +2,6 @@ const findBook = () => {
     const randomJoke = document.getElementById('randomizer');
     // console.log(inputField);
     randomJoke.addEventListener('click', handleSubmit)
-    
-    
 }
 
 const handleSubmit = (event) => {
@@ -29,22 +27,25 @@ const renderJoke = (library) => {
     jokes.innerText = joke
     //console.log(jokes);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a56cc30cd83df609f769c9eacfc66b14e0202708
     const obj = {
         jokes: joke,
         category: library.category,
         likes: '0'
-        
     }
     
     const likeBtn = document.getElementById('like')
-    likeBtn.addEventListener('click', handleLikeClick(obj))
+    likeBtn.addEventListener('click', () => handleLikeClick(obj))
 }
 
 
 function handleLikeClick(likeButton) {
     console.log(likeButton)
     //fetch('http://localhost:3000')
+    console.log('test')
     
 }
 document.addEventListener('DOMContentLoaded', findBook)
