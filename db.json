@@ -1,34 +1,10 @@
 {
   "jokes": [
     {
-      "jokes": "ASCII silly question, get a silly ANSI.",
+      "jokes": "// This line doesn't actually do anything, but the code stops working when I delete it.",
       "category": "Programming",
-      "likes": "0",
+      "likes": 7,
       "id": 2
-    },
-    {
-      "jokes": "I'm reading a book about anti-gravity. It's impossible to put down!",
-      "category": "Pun",
-      "likes": "0",
-      "id": 3
-    },
-    {
-      "jokes": "Judge: \"I sentence you to the maximum punishment...\"\nMe (thinking): \"Please be death, please be death...\"\nJudge: \"Learn Java!\"\nMe: \"Damn.\"",
-      "category": "Programming",
-      "likes": "0",
-      "id": 4
-    },
-    {
-      "jokes": "A perfectionist walked into a bar... apparently, the bar was not set high enough.",
-      "category": "Misc",
-      "likes": "0",
-      "id": 5
-    },
-    {
-      "jokes": "Never date a baker. They're too kneady.",
-      "category": "Misc",
-      "likes": "0",
-      "id": 6
     }
   ]
 }
