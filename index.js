@@ -44,10 +44,33 @@ function handleLikeClick(addFav) {
         body:JSON.stringify(addFav)
         })
     .then(res => res.json())
-    .then(data => console.log(data))    
+    .then(data => renderData(data))    
+}
+
+
+const handleDB = () => {
+    fetch("http://localhost:3000/jokes")
+   .then(res => res.json())
+   .then(data => data.forEach(element => renderData(element)))
+}
+
+const renderData = (element) => {
+    const divJokes = document.querySelector("#db-jokes")
+    console.log(divJokes);
+    const parJokes = document.createElement('p')
+        parJokes.innerText = element.jokes
+
+    const category = document.createElement('p')
+        category.innerText = element.category
+
+    const likes = document.createElement('p')
+        likes.innerText = element.likes
+    
+        console.log(parJokes, category, likes);
+    divJokes.append(parJokes, category, likes)
 }
 
 
 
-document.addEventListener('DOMContentLoaded', handleSubmit())
+document.addEventListener('DOMContentLoaded', handleSubmit(), handleDB())
 
