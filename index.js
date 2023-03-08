@@ -7,7 +7,11 @@ const handleSubmit = () => {
 
 
 const renderJoke = (library) => {
-      
+    const buttonDiv = document.querySelector('#button-div')
+    buttonDiv.innerHTML = ''
+    
+    const breakLine = document.createElement('br')
+
     const spanJokes = document.querySelector('#jokes')
     spanJokes.innerText = library.joke
 
@@ -19,7 +23,8 @@ const renderJoke = (library) => {
         disBtn.className = "dislike"
         disBtn.innerText = "Bad Joke"  
 
-    spanJokes.append(fwrBtn, disBtn)
+
+    buttonDiv.append(fwrBtn, disBtn)
 
     const obj = {
         jokes: library.joke,
@@ -47,13 +52,24 @@ function handleLikeClick(addFav) {
 
 const divJokes = document.querySelector("#db-jokes")
 
+const filterJokes = document.querySelector("#filter-select")
+
 const handleDB = () => {
     fetch("http://localhost:3000/jokes")
-   .then(res => res.json())
-   .then(data => {
+    .then(res => res.json())
+    .then(data => {
     divJokes.innerHTML = ""
     data.sort((a,b) => b.likes - a.likes)
     data.forEach(element => renderData(element))
+    filterJokes.onchange = (e) => {
+        if (e.target.value === "") {
+            data.forEach(element => renderData(element))
+        } else {
+            divJokes.innerHTML = ""
+            data.filter(item => item.category === e.target.value).forEach(item => {renderData(item)})
+        }
+        console.log(e.target.value)
+    }
 })
 }
 
@@ -146,6 +162,8 @@ submitForm.addEventListener('submit', (e) => {
     }
     
 })
+
+
 
 
 
