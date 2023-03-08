@@ -45,17 +45,21 @@ function handleLikeClick(addFav) {
     .then(data => renderData(data))    
 }
 
+const divJokes = document.querySelector("#db-jokes")
 
 const handleDB = () => {
     fetch("http://localhost:3000/jokes")
    .then(res => res.json())
-   .then(data => data.forEach(element => renderData(element)))
+   .then(data => {
+    divJokes.innerHTML = ""
+    data.sort((a,b) => b.likes - a.likes)
+    data.forEach(element => renderData(element))
+})
 }
 
 const renderData = (element) => {
     //chosen element div
-    const divJokes = document.querySelector("#db-jokes")
-
+    
     //! create div for each joke and assign new class
     const divJokesContent = document.createElement('div')
     divJokesContent.className = "jokes-content"
@@ -88,7 +92,9 @@ const renderData = (element) => {
             body: JSON.stringify({likes: ++countLikes})
         })
         .then(res => res.json())
-        .then(data => {likes.innerText = data.likes})
+        .then(data => {likes.innerText = data.likes
+        handleDB()
+        })
     })
 
 
@@ -110,28 +116,35 @@ const renderData = (element) => {
 
 }
 
+
+
 const submitForm = document.getElementById('input_form')
+
 
 submitForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    const newSubmitObj = {
-       jokes: e.target.name.value,
-       category: e.target.category.value,
-       likes: '0'
-       
+    const selectCategory = document.getElementById('category-select')
+
+    if (selectCategory.value === "") {
+        alert("Please select a category")
+    } else {
+        const newSubmitObj = {
+            jokes: e.target.name.value,
+            category: selectCategory.value,
+            likes: '0'
+        }
+        fetch('http://localhost:3000/jokes/', {
+        method: "POST",
+        headers: {
+        'Content-type':'application/json',
+            },
+        body:JSON.stringify(newSubmitObj)
+        })
+        .then(res => res.json())
+        .then(data => renderData(data))
+        submitForm.reset()
     }
-    console.log(newSubmitObj)
-
-     fetch('http://localhost:3000/jokes/', {
-    method: "POST",
-    headers: {
-     'Content-type':'application/json',
-         },
-    body:JSON.stringify(newSubmitObj)
-     })
-    .then(res => res.json())
-    .then(data => renderData(data))
-
+    
 })
 
 
