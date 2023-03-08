@@ -82,6 +82,9 @@ const renderData = (element) => {
 
 
     // * create paragraphs for each joke
+    const paragraphDiv = document.createElement('div')
+     paragraphDiv.className = "p-Div"
+
     const parJokes = document.createElement('p')
         parJokes.innerText = element.jokes
 
@@ -97,6 +100,9 @@ const renderData = (element) => {
     
 
     //create like button for each joke and update the number of likes using PATCH method
+    const likeDiv = document.createElement('div')
+    likeDiv.className = "like-Div"
+    
     const likeBtn = document.createElement('button')
     likeBtn.innerText = "Like"
     likeBtn.addEventListener('click', () => {
@@ -110,8 +116,11 @@ const renderData = (element) => {
         .then(res => res.json())
         .then(data => {likes.innerText = data.likes
         handleDB()
+        
         })
+        
     })
+
 
 
     // * create delete button for each joke and update the number of likes using DELETE method
@@ -124,7 +133,9 @@ const renderData = (element) => {
     })
 
     // add all elements to our div for each joke
-    divJokesContent.append(parJokes, category, likes, likeBtn, deleteBtn)
+    likeDiv.append(likeBtn, deleteBtn)
+    paragraphDiv.append(parJokes, category, likes)
+    divJokesContent.append(paragraphDiv, likeDiv)
 
 
     // append whole div with all elements to global div

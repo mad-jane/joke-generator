@@ -57,17 +57,12 @@ body {
     margin: auto;
 }
 
-.like {
-    margin-right: 20px;
+.like, .dislike {
+    margin: 20px;
     padding: 10px;
-    margin-bottom: 10px;
+    
 }
 
-.dislike {
-    margin-left: 20px;
-    padding: 10px;
-    margin-bottom: 10px;
-}
 
 #new-input {
     background: white;
@@ -91,8 +86,39 @@ body {
     border-radius: 20px;
     border: 10px solid rgb(0,110,51);
     width: 700px;
-    display: flex;
+    display: grid;
+    grid-template-rows: 100px 1fr; 
     justify-content: center;
-    align-items: center;
+    align-items: center; 
+    
 }
 
+#form-id {
+    grid-row: 1;
+    align-items: center; 
+    justify-self: center;
+}
+
+#db-jokes {
+    grid-row: 2;
+}
+
+.jokes-content {
+    width: 500px;
+    background-color: yellow;
+    margin: 20px;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    align-items: center;
+    flex-direction: vertical;
+}
+
+
+/* .like-Div, .p-Div {
+   
+} */
+
+
+/* .p-Div {
+
+} */

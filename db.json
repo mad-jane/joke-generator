@@ -1,10 +1,52 @@
 {
   "jokes": [
     {
-      "jokes": "I have a joke about Stack Overflow, but you would say it's a duplicate.",
+      "jokes": "I have a fish that can breakdance! Only for 20 seconds though, and only once.",
+      "category": "Dark",
+      "likes": 2,
+      "id": 2
+    },
+    {
+      "jokes": "My wife and I have reached the difficult decision that we do not want children.\nIf anybody does, please just send me your contact details and we can drop them off tomorrow.",
+      "category": "Misc",
+      "likes": "0",
+      "id": 3
+    },
+    {
+      "jokes": "Being a self-taught developer is almost the same as being a cut neck chicken because you have no sense of direction in the beginning.",
+      "category": "Programming",
+      "likes": 1,
+      "id": 4
+    },
+    {
+      "jokes": "The glass is neither half-full nor half-empty, the glass is twice as big as it needs to be.",
       "category": "Programming",
       "likes": "0",
-      "id": 1
+      "id": 5
+    },
+    {
+      "jokes": "\"We messed up the keming again guys.\"",
+      "category": "Programming",
+      "likes": "0",
+      "id": 6
+    },
+    {
+      "jokes": "// This line doesn't actually do anything, but the code stops working when I delete it.",
+      "category": "Programming",
+      "likes": "0",
+      "id": 7
+    },
+    {
+      "jokes": "Four engineers get into a car. The car won't start.\nThe Mechanical engineer says \"It's a broken starter\".\nThe Electrical engineer says \"Dead battery\".\nThe Chemical engineer says \"Impurities in the gasoline\".\nThe IT engineer says \"Hey guys, I have an idea: How about we all get out of the car and get back in\".",
+      "category": "Programming",
+      "likes": "0",
+      "id": 8
+    },
+    {
+      "jokes": "A neutron walks into a bar and asks for a price on a drink.\nThe barkeeper says: \"For you... no charge!\"",
+      "category": "Misc",
+      "likes": "0",
+      "id": 9
     }
   ]
 }
