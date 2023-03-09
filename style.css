@@ -4,12 +4,12 @@ body {
     background-size: cover;
     font-family: 'Hoefler Text', sans-serif;
 }
-
 #title-container {
     background: white;
     width: 700px;
     height: 150px;
     margin: auto;
+    margin-bottom: 20px;
     border-radius: 20px;
     border: 10px solid rgb(0,110,51);
     display: flex;
@@ -17,7 +17,6 @@ body {
     align-items: center;
     /* justify-content: space-between; */
 }
-
 #title-text {
     width: 10px;
     flex: 2;
@@ -25,45 +24,76 @@ body {
     font-size: 50px;
     padding-right: 50px;
 }
-
 #title-icon {
     width: 10px;
     height: 120px;
-    /* border-radius: 10px; */
+    border-radius: 10px;
     flex: 1;
     padding-left: 30px;
-    padding-right: 60px
+    padding-right: 60px;
 }
-
 #existing-jokes {
     background: white;
-    margin: 10px auto;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: large;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    text-align: center;
     border-radius: 20px;
     border: 10px solid rgb(0,110,51);
     display: grid;
+    grid-auto-flow: column;
     grid-template-rows: 2fr 1fr;
     height: 200px;
     width: 700px;
     align-items: center;
     flex-direction: vertical;
+    /* thinking to do something with overflow for the text that goes beyond the box */
 }
-
 #jokes {
     text-align: center;
     margin: auto;
 }
-
 #button-div {
     margin: auto;
 }
-
 .like, .dislike {
     margin: 20px;
-    padding: 10px;
-    
+    /* padding: 10px; */
+    background-color: #0b751e9d;
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    padding: 14px 40px;
+    font-size: 13px;
+    cursor: pointer;
 }
-
-
+.inputClassNewJoke {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #0b751e9d;
+    /* width: 100%;
+    padding:10px;
+    border-radius:10px; */
+}
+#category-select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #0b751e9d;
+}
+.input-submit{
+    background-color: #0b751e9d;
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    padding: 14px 40px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.submitOriginal {
+    font-size: 16px;
+}
 #new-input {
     background: white;
     margin: auto;
@@ -74,43 +104,73 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 #input_form {
     text-align: center;
     margin: 30px
 }
-
 #filter-container {
     background: white;
     margin: auto;
+    margin-top: 20px;
     border-radius: 20px;
     border: 10px solid rgb(0,110,51);
     width: 700px;
     display: grid;
-    grid-template-rows: 100px 1fr; 
+    grid-template-rows: 100px 1fr;
     justify-content: center;
-    align-items: center; 
-    
+    align-items: center;
 }
-
+#filter-select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #0b751e9d;
+}
 #form-id {
     grid-row: 1;
-    align-items: center; 
+    align-items: center;
     justify-self: center;
 }
-
 #db-jokes {
     grid-row: 2;
 }
-
 .jokes-content {
-    width: 500px;
-    background-color: yellow;
+    width: auto;
+    background-color: #fff;
     margin: 20px;
     display: grid;
     grid-template-rows: 3fr 1fr;
     align-items: center;
     flex-direction: vertical;
+}
+.like-Div {
+    font-size: large;
+    letter-spacing: 1px;
+    text-align: center;
+    /* background-color: #0b751e9d;
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    padding: 14px 40px;
+    font-size: 13px;
+    cursor: pointer; */
+}
+.p-Div {
+    font-size: large;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 1.5;
+    /* font-weight: bold; */
+}
+.LikeBtn, .deleteBtn {
+    background-color: #0b751e9d;
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    padding: 14px 40px;
+    font-size: 13px;
+    cursor: pointer;
+   margin-left: 20px;
+   margin-right: 20px;
 }
 
 

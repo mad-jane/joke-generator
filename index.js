@@ -10,8 +10,6 @@ const renderJoke = (library) => {
     const buttonDiv = document.querySelector('#button-div')
     buttonDiv.innerHTML = ''
     
-    const breakLine = document.createElement('br')
-
     const spanJokes = document.querySelector('#jokes')
     spanJokes.innerText = library.joke
 
@@ -47,7 +45,7 @@ function handleLikeClick(addFav) {
         body:JSON.stringify(addFav)
         })
     .then(res => res.json())
-    .then(data => renderData(data))    
+    .then(data => handleDB())    
 }
 
 const divJokes = document.querySelector("#db-jokes")
@@ -63,15 +61,18 @@ const handleDB = () => {
     data.forEach(element => renderData(element))
     filterJokes.onchange = (e) => {
         if (e.target.value === "") {
-            data.forEach(element => renderData(element))
+            divJokes.innerHTML = ""
+            data.forEach(el => renderData(el))
         } else {
             divJokes.innerHTML = ""
             data.filter(item => item.category === e.target.value).forEach(item => {renderData(item)})
         }
-        console.log(e.target.value)
     }
-})
+    })
 }
+
+
+
 
 const renderData = (element) => {
     //chosen element div
@@ -104,6 +105,7 @@ const renderData = (element) => {
     likeDiv.className = "like-Div"
     
     const likeBtn = document.createElement('button')
+    likeBtn.className = "LikeBtn"
     likeBtn.innerText = "Like"
     likeBtn.addEventListener('click', () => {
         fetch(`http://localhost:3000/jokes/${element.id}`, {
@@ -125,11 +127,16 @@ const renderData = (element) => {
 
     // * create delete button for each joke and update the number of likes using DELETE method
     const deleteBtn = document.createElement('button')
+    deleteBtn.className = "deleteBtn"
     deleteBtn.innerText = "Delete"
     deleteBtn.addEventListener('click', () => {
         fetch(`http://localhost:3000/jokes/${element.id}`, {method: "DELETE"})
         .then(res => res.json())
-        .then(data => divJokesContent.remove())
+        .then(data =>{ divJokesContent.remove()
+        handleDB()
+        }
+        
+        )
     })
 
     // add all elements to our div for each joke
@@ -168,7 +175,7 @@ submitForm.addEventListener('submit', (e) => {
         body:JSON.stringify(newSubmitObj)
         })
         .then(res => res.json())
-        .then(data => renderData(data))
+        .then(data => handleDB())
         submitForm.reset()
     }
     
