@@ -2,6 +2,7 @@ body {
     position: relative;
     background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F03236%2FLaughing-theater-a_3236118k.jpg&f=1&nofb=1&ipt=7fa2a1fff7621f522fcd89033509a9a054e207b5c2ccceebfa09f9218f80d6bc&ipo=images");
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: 100%;
     font-family: 'Hoefler Text', sans-serif;
 }
@@ -149,7 +150,7 @@ h4 {
 #db-jokes {
     grid-row: 2;
 }
-  
+
 .jokes-content {
     border: solid;
     border-color: red;
@@ -180,8 +181,8 @@ h4 {
 .p-Joke{
     width: 100%;
     min-height: 50px;
-    background-color: gray;
     align-items: center;
+    text-align: center;
 
     /* letter-spacing: 1px;
     text-align: center;
@@ -192,13 +193,12 @@ h4 {
 .LikeBtn, .p-Category, .count_of_likes, .deleteBtn {
     flex-direction: row;
     flex-basis: 18%;
-    background-color: lightblue;
+    font-weight: lighter;
 }
 
 .p-Category {
     flex-direction: row;
     flex-basis: 26%;
-    background-color: lightblue;
 }
 
 .LikeBtn, .deleteBtn {

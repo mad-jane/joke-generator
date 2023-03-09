@@ -1,58 +1,52 @@
 {
   "jokes": [
     {
-      "jokes": "I bought some shoes from a drug dealer. I don't know what he laced them with, but I was tripping all day!",
-      "category": "Pun",
-      "likes": 8,
+      "jokes": "A programmer puts two glasses on his bedside table before going to sleep.\nA full one, in case he gets thirsty, and an empty one, in case he doesn't.",
+      "category": "Programming",
+      "likes": "0",
+      "id": 1
+    },
+    {
+      "jokes": "A programmer puts two glasses on his bedside table before going to sleep.\nA full one, in case he gets thirsty, and an empty one, in case he doesn't.",
+      "category": "Programming",
+      "likes": "0",
+      "id": 2
+    },
+    {
+      "jokes": "\"Honey, go to the store and buy some eggs.\"\n\"OK.\"\n\"Oh and while you're there, get some milk.\"\nHe never returned.",
+      "category": "Programming",
+      "likes": "0",
       "id": 3
     },
     {
-      "jokes": "The generation of random numbers is too important to be left to chance.",
+      "jokes": "\"Honey, go to the store and buy some eggs.\"\n\"OK.\"\n\"Oh and while you're there, get some milk.\"\nHe never returned.",
       "category": "Programming",
-      "likes": 9,
-      "id": 10
+      "likes": "0",
+      "id": 4
     },
     {
-      "jokes": "Two fish in a tank. One turns to the other and says, \"Do you know how to drive this thing?\"",
-      "category": "Pun",
-      "likes": 10,
-      "id": 11
-    },
-    {
-      "jokes": "To whoever stole my copy of Microsoft Office, I will find you. You have my Word!",
-      "category": "Pun",
-      "likes": 1,
-      "id": 12
-    },
-    {
-      "jokes": "UDP is better in the COVID era since it avoids unnecessary handshakes.",
+      "jokes": "// This line doesn't actually do anything, but the code stops working when I delete it.",
       "category": "Programming",
-      "likes": 8,
-      "id": 13
+      "likes": "0",
+      "id": 5
     },
     {
-      "jokes": "There are only 10 kinds of people in this world: those who know binary and those who don't.",
+      "jokes": "// This line doesn't actually do anything, but the code stops working when I delete it.",
       "category": "Programming",
-      "likes": 2,
-      "id": 14
+      "likes": "0",
+      "id": 6
     },
     {
-      "jokes": "Two fish in a tank. One turns to the other and says, \"Do you know how to drive this thing?\"",
-      "category": "Pun",
-      "likes": 2,
-      "id": 15
+      "jokes": "Never date a baker. They're too kneady.",
+      "category": "Misc",
+      "likes": "0",
+      "id": 7
     },
     {
-      "jokes": "Judge: \"I sentence you to the maximum punishment...\"\nMe (thinking): \"Please be death, please be death...\"\nJudge: \"Learn Java!\"\nMe: \"Damn.\"",
+      "jokes": "A man is smoking a cigarette and blowing smoke rings into the air. His girlfriend becomes irritated with the smoke and says \"Can't you see the warning on the cigarette pack? Smoking is hazardous to your health!\" to which the man replies, \"I am a programmer.  We don't worry about warnings; we only worry about errors.\"",
       "category": "Programming",
-      "likes": 2,
-      "id": 16
-    },
-    {
-      "jokes": "I have a joke about trickle down economics, but 99% of you will never get it.",
-      "category": "Pun",
-      "likes": 8,
-      "id": 17
+      "likes": "0",
+      "id": 8
     }
   ]
 }
