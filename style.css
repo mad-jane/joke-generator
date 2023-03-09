@@ -1,7 +1,8 @@
 body {
+    position: relative;
     background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F03236%2FLaughing-theater-a_3236118k.jpg&f=1&nofb=1&ipt=7fa2a1fff7621f522fcd89033509a9a054e207b5c2ccceebfa09f9218f80d6bc&ipo=images");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     font-family: 'Hoefler Text', sans-serif;
 }
 #title-container {
@@ -18,19 +19,17 @@ body {
     /* justify-content: space-between; */
 }
 #title-text {
-    width: 10px;
+    /* width: 10px; */
     flex: 2;
     text-align: center;
     font-size: 50px;
-    padding-right: 50px;
+    /* padding-right: 50px; */
 }
 #title-icon {
-    width: 10px;
-    height: 120px;
-    border-radius: 10px;
+    max-width: 120px;
     flex: 1;
     padding-left: 30px;
-    padding-right: 60px;
+    mix-blend-mode: multiply;
 }
 #existing-jokes {
     background: white;
@@ -45,10 +44,9 @@ body {
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: 2fr 1fr;
-    height: 200px;
-    width: 700px;
+    min-height: 300px;
+    max-width: 700px;
     align-items: center;
-    flex-direction: vertical;
     /* thinking to do something with overflow for the text that goes beyond the box */
 }
 #jokes {
@@ -56,10 +54,13 @@ body {
     margin: auto;
 }
 #button-div {
+    height: 50px;
     margin: auto;
+    align-self: flex-end;
 }
+
 .like, .dislike {
-    margin: 20px;
+    margin: 13px 50px 0 50px;
     /* padding: 10px; */
     background-color: #0b751e9d;
     color: #fff;
@@ -69,13 +70,26 @@ body {
     font-size: 13px;
     cursor: pointer;
 }
+
+.like:hover {
+    background-color: rgba(55, 196, 76, 0.703);
+}
+
+.dislike:hover {
+    background-color: #d62b2bc9;
+}
 .inputClassNewJoke {
+    width: 350px;
+    height: 50px;
     padding: 10px;
     border-radius: 10px;
     border: 2px solid #0b751e9d;
     /* width: 100%;
     padding:10px;
     border-radius:10px; */
+}
+h4 {
+    margin: 10px 0 0 0;
 }
 #category-select {
     padding: 10px;
@@ -89,6 +103,7 @@ body {
     border-radius: 10px;
     padding: 14px 40px;
     font-size: 13px;
+    margin: 0 0 10px 0;
     cursor: pointer;
 }
 .submitOriginal {
@@ -106,7 +121,7 @@ body {
 }
 #input_form {
     text-align: center;
-    margin: 30px
+    margin: 10px
 }
 #filter-container {
     background: white;
@@ -116,11 +131,12 @@ body {
     border: 10px solid rgb(0,110,51);
     width: 700px;
     display: grid;
-    grid-template-rows: 100px 1fr;
+    grid-template-rows: 50px 1fr;
     justify-content: center;
     align-items: center;
 }
 #filter-select {
+    margin: 20px;
     padding: 10px;
     border-radius: 10px;
     border: 2px solid #0b751e9d;
@@ -133,52 +149,71 @@ body {
 #db-jokes {
     grid-row: 2;
 }
+  
 .jokes-content {
+    border: solid;
+    border-color: red;
+    border-radius: 20px;
+    /* box-shadow: 3px 3px red, -1em 0 .4em olive; */
     width: auto;
-    background-color: #fff;
     margin: 20px;
-    display: grid;
-    grid-template-rows: 3fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    /* grid-template-rows: 3fr 1fr; */
     align-items: center;
-    flex-direction: vertical;
+    justify-content: space-around;
 }
+
+.jokes-content:hover {
+    box-shadow: 0 8px 16px 0 rgba(218, 31, 31, 0.685);
+}
+
 .like-Div {
     font-size: large;
     letter-spacing: 1px;
     text-align: center;
-    /* background-color: #0b751e9d;
-    color: #fff;
-    border: 0;
-    border-radius: 10px;
-    padding: 14px 40px;
-    font-size: 13px;
-    cursor: pointer; */
+    display: flex;
+    justify-content: space-between;
 }
-.p-Div {
-    font-size: large;
-    letter-spacing: 1px;
+
+.p-Joke{
+    width: 100%;
+    min-height: 50px;
+    background-color: gray;
+    align-items: center;
+
+    /* letter-spacing: 1px;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.5; */
     /* font-weight: bold; */
 }
+
+.LikeBtn, .p-Category, .count_of_likes, .deleteBtn {
+    flex-direction: row;
+    flex-basis: 18%;
+    background-color: lightblue;
+}
+
+.p-Category {
+    flex-direction: row;
+    flex-basis: 26%;
+    background-color: lightblue;
+}
+
 .LikeBtn, .deleteBtn {
     background-color: #0b751e9d;
     color: #fff;
     border: 0;
     border-radius: 10px;
-    padding: 14px 40px;
-    font-size: 13px;
+    /* padding: 14px 40px; */
+    font-size: 15px;
     cursor: pointer;
-   margin-left: 20px;
-   margin-right: 20px;
+margin-left: 20px;
+margin-right: 20px;
 }
 
-
-/* .like-Div, .p-Div {
-   
-} */
-
-
-/* .p-Div {
-
-} */
+/* .LikeBtn {
+    flex-shrink: 0;
+    align-self:
+}  */

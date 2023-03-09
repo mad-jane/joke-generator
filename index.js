@@ -5,7 +5,6 @@ const handleSubmit = () => {
     .catch(error => console.error(error));
 }
 
-
 const renderJoke = (library) => {
     const buttonDiv = document.querySelector('#button-div')
     buttonDiv.innerHTML = ''
@@ -21,19 +20,16 @@ const renderJoke = (library) => {
         disBtn.className = "dislike"
         disBtn.innerText = "Bad Joke"  
 
-
     buttonDiv.append(fwrBtn, disBtn)
 
     const obj = {
         jokes: library.joke,
         category: library.category,
         likes: '0'
-    }
-    
+    }  
     fwrBtn.addEventListener('click', () => handleLikeClick(obj))
     disBtn.addEventListener('click', () => handleSubmit())
 }
-
 
 function handleLikeClick(addFav) {
     handleSubmit()
@@ -71,42 +67,42 @@ const handleDB = () => {
     })
 }
 
-
-
-
 const renderData = (element) => {
-    //chosen element div
-    
     //! create div for each joke and assign new class
     const divJokesContent = document.createElement('div')
     divJokesContent.className = "jokes-content"
-
 
     // * create paragraphs for each joke
     const paragraphDiv = document.createElement('div')
      paragraphDiv.className = "p-Div"
 
-    const parJokes = document.createElement('p')
+    const parJokes = document.createElement('h4')
+    parJokes.className = "p-Joke"
         parJokes.innerText = element.jokes
 
-    const category = document.createElement('p')
-        category.innerText = element.category
+    const category = document.createElement('h5')
+    category.className = "p-Category"
+        category.innerText = 'Category: ' + element.category
 
     const likes = document.createElement('p')
-        likes.innerText = element.likes
-
+        likes.className = "count_of_likes"
+        // likes.innerText = element.likes    
+        if (element.likes == 1) {
+            likes.innerText = element.likes + " like"
+        } else {
+            likes.innerText = element.likes + " likes"
+        }
 
     //$ our number of likes
     let countLikes = parseInt(likes.textContent)
     
-
     //create like button for each joke and update the number of likes using PATCH method
     const likeDiv = document.createElement('div')
     likeDiv.className = "like-Div"
     
     const likeBtn = document.createElement('button')
     likeBtn.className = "LikeBtn"
-    likeBtn.innerText = "Like"
+    likeBtn.textContent = "Like"
     likeBtn.addEventListener('click', () => {
         fetch(`http://localhost:3000/jokes/${element.id}`, {
             method: "PATCH",
@@ -118,12 +114,8 @@ const renderData = (element) => {
         .then(res => res.json())
         .then(data => {likes.innerText = data.likes
         handleDB()
-        
-        })
-        
+        })     
     })
-
-
 
     // * create delete button for each joke and update the number of likes using DELETE method
     const deleteBtn = document.createElement('button')
@@ -134,26 +126,20 @@ const renderData = (element) => {
         .then(res => res.json())
         .then(data =>{ divJokesContent.remove()
         handleDB()
-        }
-        
-        )
+        })
     })
 
     // add all elements to our div for each joke
-    likeDiv.append(likeBtn, deleteBtn)
-    paragraphDiv.append(parJokes, category, likes)
-    divJokesContent.append(paragraphDiv, likeDiv)
-
+    // likeDiv.append(likeBtn, likes, category, deleteBtn)
+    // paragraphDiv.append(parJokes)
+    // divJokesContent.append(paragraphDiv, likeDiv)
+    divJokesContent.append(parJokes, likeBtn, likes, category, deleteBtn)
 
     // append whole div with all elements to global div
     divJokes.append(divJokesContent)
-
 }
 
-
-
 const submitForm = document.getElementById('input_form')
-
 
 submitForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -177,15 +163,8 @@ submitForm.addEventListener('submit', (e) => {
         .then(res => res.json())
         .then(data => handleDB())
         submitForm.reset()
-    }
-    
+    }  
 })
-
-
-
-
-
-
 
 document.addEventListener('DOMContentLoaded', handleSubmit(), handleDB())
 

@@ -10,38 +10,37 @@
             <image id="title-icon" src="assets/title-icon.jpg" alt="laughing person"></image>
             <h1 id="title-text">Joke Generator</h1>
         </div>
-        <div>
         <div id="existing-jokes">
             <span id="jokes"></span>
             <div id="button-div">
             </div>
-        </div>
-            <!-- <button id="like">Like</button>
-            <button id="dislike">Dislike</button> -->
-            <!-- <button>Favorite</button> -->
         </div>
         <div id="new-input">
             <!-- <button id="randomizer">Random Joke</button> -->
             <br>
             <br>
             <form id="input_form">
-                <label class="submitOriginal">Submit an original:</label>
-                <input  class='inputClassNewJoke' type="text" name="name"placeholder='newJoke'>
+                <label class="submitOriginal"><h4>Submit an original:</h4></label>
+                <br>
+                <textarea class='inputClassNewJoke' type="text" name="name" placeholder='newJoke'>
+                    
+                </textarea>             
+                   <br>
                 <!-- <input type="text" name="category" placeholder="newCategory"> -->
                 <select name="category" id="category-select">
-                    <option value="">Please choose an option</option>
+                    <option value="">Please choose a category</option>
                     <option value="Programming">Programming</option>
                     <option value="Dark">Dark</option>
                     <option value="Misc">Misc</option>
                     <option value="Pun">Pun</option>
                 </select>
-                <input class='input-submit' type="submit" value="submit">
+                <input class='input-submit' type="submit" value="Create new joke">
             </form>
         </div>
         <div id="filter-container">
                 <form id="form-id">
                     <select name="filter" id="filter-select">
-                        <option value="">--Filter By Type--</option>
+                        <option value="">--Filter By Category--</option>
                         <option value="Programming">Programming</option>
                         <option value="Dark">Dark</option>
                         <option value="Misc">Misc</option>

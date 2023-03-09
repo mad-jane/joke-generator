@@ -1,34 +1,58 @@
 {
   "jokes": [
     {
-      "jokes": "A SQL statement walks into a bar and sees two tables.\nIt approaches, and asks \"may I join you?\"",
-      "category": "Programming",
-      "likes": 5,
-      "id": 1
-    },
-    {
-      "jokes": "Debugging is like being the detective in a crime movie where you're also the murderer at the same time.",
-      "category": "Programming",
-      "likes": 6,
-      "id": 2
-    },
-    {
-      "jokes": "My girlfriend's dog died, so I tried to cheer her up by getting her an identical one. It just made her more upset. She screamed at me, \"What am I supposed to do with two dead dogs?\"",
-      "category": "Dark",
-      "likes": "0",
+      "jokes": "I bought some shoes from a drug dealer. I don't know what he laced them with, but I was tripping all day!",
+      "category": "Pun",
+      "likes": 8,
       "id": 3
     },
     {
-      "jokes": "A SQL statement walks into a bar and sees two tables.\nIt approaches, and asks \"may I join you?\"",
+      "jokes": "The generation of random numbers is too important to be left to chance.",
       "category": "Programming",
-      "likes": "0",
-      "id": 4
+      "likes": 9,
+      "id": 10
     },
     {
-      "jokes": "HAHAHAHAH",
-      "category": "Misc",
+      "jokes": "Two fish in a tank. One turns to the other and says, \"Do you know how to drive this thing?\"",
+      "category": "Pun",
+      "likes": 10,
+      "id": 11
+    },
+    {
+      "jokes": "To whoever stole my copy of Microsoft Office, I will find you. You have my Word!",
+      "category": "Pun",
+      "likes": 1,
+      "id": 12
+    },
+    {
+      "jokes": "UDP is better in the COVID era since it avoids unnecessary handshakes.",
+      "category": "Programming",
+      "likes": 8,
+      "id": 13
+    },
+    {
+      "jokes": "There are only 10 kinds of people in this world: those who know binary and those who don't.",
+      "category": "Programming",
       "likes": 2,
-      "id": 5
+      "id": 14
+    },
+    {
+      "jokes": "Two fish in a tank. One turns to the other and says, \"Do you know how to drive this thing?\"",
+      "category": "Pun",
+      "likes": 2,
+      "id": 15
+    },
+    {
+      "jokes": "Judge: \"I sentence you to the maximum punishment...\"\nMe (thinking): \"Please be death, please be death...\"\nJudge: \"Learn Java!\"\nMe: \"Damn.\"",
+      "category": "Programming",
+      "likes": 2,
+      "id": 16
+    },
+    {
+      "jokes": "I have a joke about trickle down economics, but 99% of you will never get it.",
+      "category": "Pun",
+      "likes": 8,
+      "id": 17
     }
   ]
 }
