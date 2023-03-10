@@ -27,10 +27,13 @@ body {
     /* padding-right: 50px; */
 }
 #title-icon {
+    border-radius: 50% 20% / 10% 40%;
+
     max-width: 120px;
     flex: 1;
-    padding-left: 30px;
-    mix-blend-mode: multiply;
+    margin-left: 20px;
+    /* padding-left: 30px; */
+    
 }
 #existing-jokes {
     background: white;
@@ -183,6 +186,7 @@ h4 {
     min-height: 50px;
     align-items: center;
     text-align: center;
+    margin-top: 15px;
 
     /* letter-spacing: 1px;
     text-align: center;
@@ -199,6 +203,7 @@ h4 {
 .p-Category {
     flex-direction: row;
     flex-basis: 26%;
+    text-align: center;
 }
 
 .LikeBtn, .deleteBtn {
@@ -213,7 +218,3 @@ margin-left: 20px;
 margin-right: 20px;
 }
 
-/* .LikeBtn {
-    flex-shrink: 0;
-    align-self:
-}  */

@@ -102,7 +102,7 @@ const renderData = (element) => {
     
     const likeBtn = document.createElement('button')
     likeBtn.className = "LikeBtn"
-    likeBtn.textContent = "Like"
+    likeBtn.textContent = likes.innerText
     likeBtn.addEventListener('click', () => {
         fetch(`http://localhost:3000/jokes/${element.id}`, {
             method: "PATCH",
@@ -133,7 +133,7 @@ const renderData = (element) => {
     // likeDiv.append(likeBtn, likes, category, deleteBtn)
     // paragraphDiv.append(parJokes)
     // divJokesContent.append(paragraphDiv, likeDiv)
-    divJokesContent.append(parJokes, likeBtn, likes, category, deleteBtn)
+    divJokesContent.append(parJokes, likeBtn, category, deleteBtn)
 
     // append whole div with all elements to global div
     divJokes.append(divJokesContent)
